@@ -1,5 +1,12 @@
 import { test, expect } from '@playwright/test'
+test.beforeAll(async() =>{
+    console.log("Login into the Application!!!");
+})
 
+test.afterAll(async () =>{
+    console.log("Logout from the Application!!!");
+    
+})
 test.describe('Sanity Testcases', () => {
 
     test('First Test', async ({ page }) => {
@@ -11,7 +18,7 @@ test.describe('Sanity Testcases', () => {
     })
 })
 
-test.describe.only('Regression Testcases', () => {
+test.describe('Regression Testcases', () => {
     test('Third Test', async ({ page }) => {
         console.log("It is a Third Test case!!!")
     })
@@ -20,4 +27,3 @@ test.describe.only('Regression Testcases', () => {
         console.log("It is a Fourth Test case!!!")
     })
 })
-

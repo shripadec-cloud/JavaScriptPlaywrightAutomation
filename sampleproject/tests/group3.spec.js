@@ -11,7 +11,7 @@ test.describe('Sanity Testcases', () => {
     })
 })
 
-test.describe.only('Regression Testcases', () => {
+test.describe.skip('Regression Testcases', () => {
     test('Third Test', async ({ page }) => {
         console.log("It is a Third Test case!!!")
     })
@@ -21,3 +21,13 @@ test.describe.only('Regression Testcases', () => {
     })
 })
 
+
+test.describe('Unit Testcases', () => {
+    test('Fifth Test', async ({ page }) => {
+        console.log("It is a Fifth Test case!!!")
+    })
+
+    test('Sixth Test', async ({ page }) => {
+        console.log("It is a Sixth Test case!!!")
+    })
+})
