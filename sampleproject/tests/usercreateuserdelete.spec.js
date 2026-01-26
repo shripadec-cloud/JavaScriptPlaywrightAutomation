@@ -156,12 +156,15 @@ test.describe("Modify the Customer", () => {
 
     test("Delete Modified Customer", async () => {
 
-        //await page.locator("//div[@class='editButton available']").click()
+        await page.locator("//div[@class='editButton available']").hover()
         await page.locator(".editButton.available").click()
-        await page.waitForTimeout(2000)
+        await page.waitForTimeout(3000)
+        await page.locator('div.action', { hasText: 'ACTIONS' }).first().click()
+        await page.waitForTimeout(3000)
+        await page.getByText("Delete").click()
+        await page.waitForTimeout(3000)
+        await page.locator('#customerPanel_deleteConfirm_submitTitle').click()
         
-
-
     })
 
 
